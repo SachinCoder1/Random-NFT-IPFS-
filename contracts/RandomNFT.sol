@@ -106,6 +106,7 @@ contract RandomNFT is VRFConsumerBaseV2, ERC721URIStorage, Ownable {
         uint256 newTokenId = s_tokenCounter;
 
         uint256 range = randomWords[0] % MAX_CHANCE_VALUE;
+        s_tokenCounter += s_tokenCounter;
 
          NFTChoices choice = getNFTFromRange(range);
         _safeMint(NFTOwner, newTokenId);
